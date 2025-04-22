@@ -6,7 +6,9 @@
 let arr = [4,7,1,3,9,3,6,2,6,9];
 let count = 0; 
 for (let a = 0; a < arr.length; a++){
-    if (arr[a] % 2);
+    if (arr[a] % 2){
+        count++
+    }
 
 }
 
