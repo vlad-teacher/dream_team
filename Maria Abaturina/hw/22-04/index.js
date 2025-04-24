@@ -1,3 +1,24 @@
-const arr = [4,7,1,3,9,3,6,2,6,9];
-const evenNumbers = getEvenNumbers(arr);
-console.log(evenNumbers);
+// 1. Дан массив [4,7,1,3,9,3,6,2,6,9]
+// вывести в консоль КОЛИЧЕСТВО (штук) четных чисел из этого массива
+
+// const arr = [4,7,1,3,9,3,6,2,6,9];
+// let arr2 = 0; 
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 ===0) {
+//         arr2++;
+//     } 
+// }console.log("кол.во штук", arr2);
+// 2. вывести самое наименьшее число
+
+let arr = [4,7,1,3,9,3,6,2,6,9];
+let min = arr[0];
+
+for(let i = 1; i < arr.length; i++){
+    if (arr[i] < min){
+        min = arr[i];
+    }
+}console.log("мин.число",min);
+
+
+
+
