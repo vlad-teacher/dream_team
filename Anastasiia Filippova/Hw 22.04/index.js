@@ -7,3 +7,12 @@ for (i = 0; i < arr.length; i++) {
     }
 }
 
+// 2. Найти наименьшее число в массиве
+let minimal = arr[0];
+
+for (let i = 1; i < arr.length; i++) {
+    if(arr[i] < minimal) {
+        minimal = arr[i];
+    }
+}
+console.log(minimal);
