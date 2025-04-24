@@ -1,5 +1,5 @@
 const arr = [4,7,1,3,9,3,6,2,6,9];
-let min = [0];
+let min = arr[0];
 for(let i = 1; i < arr.length;i++){
     if(arr[i] < min) {
         min = arr[i];
@@ -7,3 +7,6 @@ for(let i = 1; i < arr.length;i++){
 }
 console.log(min);
 //найти наименьшее число из этого же массива
+/* add . 
+commit -m ''
+git push origin hw/22-04 */
