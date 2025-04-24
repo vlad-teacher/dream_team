@@ -11,6 +11,14 @@ for (let i = 0; i < array.length; i++) {
 };
 // При делении на 2 остаток будет равен нулю. Только четные числа получатьсяпш
 console.log("Кол-во чётных чисел:", sum);
-const minNumber = Math.min(...array);
-//  Статический метод Math. min() возвращает наименьшее из чисел, указанных в качестве входных параметров, или бесконечность, если параметры отсутствуют
+
+
+let minNumber = array[0];
+
+for (let i = 1; i < array.length; i++) {
+    if (array[i] < minNumber) {
+        minNumber = array[i];
+    }
+}
 console.log("Наименьшее число:", minNumber);
+
