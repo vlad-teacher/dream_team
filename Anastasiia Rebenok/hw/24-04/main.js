@@ -36,34 +36,34 @@
 
 // let userArr = []
 // for (let i = 0; i < 10;) {
+
 //     element = prompt ('Enter please a number that is divisible by three.');
 
-//     x = Number(element)
-
-//     if (element ===  null){ // !!!!!!!!
+//     if (element ===  null){
 //         alert ('Input interrupted by user!');
 //         break;
+//     };
+
+//     let userArrElement = Number(element);
+
+//     if (isNaN(userArrElement)) {
+//         alert ('enter a numeric value');
+//         continue;
 //     } else
-    
-//     if (x % 3 === 0) {
-//         userArr.push(x);
+
+//     if (userArrElement % 3 === 0) {
+//         userArr.push(userArrElement);
 //         i++;
 //     } else
-
-//     if (isNaN(x)) {
-//         alert ('enter a numeric value');
-//     } else
-//         alert ('a number is not divisible by three');
-
-// }
-
-// if (userArr.length === 10){
+//         {alert ('a number is not divisible by three')};
+        
+    
+//     if (userArr.length === 10){
 //     alert (`10 numbers that are divisible by three ${userArr}`);
+//     break;
+//     }
+
 // }
-
-
-
-
 
 
 
@@ -87,23 +87,22 @@ Enter each of these numbers in sequence.`);
             break;
         }
 
-        let x = Number(userNumber);
+        let userNumberNum = Number(userNumber);
         
-        if (isNaN(x)){
+        if (isNaN(userNumberNum)){
             alert(`This is not a number at all!`);
             break;
         } 
 
-        if (x !== myArr[i]){
+        if (userNumberNum !== myArr[i]){
             alert(`Unfortunately it's wrong number!`);
             break;
         }
 
-        userArr.push(x);
-    }
+        userArr.push(userNumberNum);
 
+         if (userArr.length === myArr.length){
+            alert(`You have an excellent memory!`)
+        }
 
-    if (userArr.length === myArr.length){
-        alert(`You have an excellent memory!`)
-    }
-    
+    };
