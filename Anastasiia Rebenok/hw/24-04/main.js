@@ -37,22 +37,22 @@
 // let userArr = []
 // for (let i = 0; i < 10;) {
 
-//     element = prompt ('Enter please a number that is divisible by three.');
+//     userInputString = prompt ('Enter please a number that is divisible by three.');
 
-//     if (element ===  null){
+//     if (userInputString ===  null){
 //         alert ('Input interrupted by user!');
 //         break;
 //     };
 
-//     let userArrElement = Number(element);
+//     let userInputNumber = Number(userInputString);
 
-//     if (isNaN(userArrElement)) {
+//     if (isNaN(userInputNumber)) {
 //         alert ('enter a numeric value');
 //         continue;
 //     } else
 
-//     if (userArrElement % 3 === 0) {
-//         userArr.push(userArrElement);
+//     if (userInputNumber % 3 === 0) {
+//         userArr.push(userInputNumber);
 //         i++;
 //     } else
 //         {alert ('a number is not divisible by three')};
@@ -71,38 +71,38 @@
 // 3. Дан массив чисел `[3,5,2,6,8,1,7]`, показать этот массив пользователю с помощью `alert()`, после чего попросить ввести те же числа с помощью `prompt()` по памяти, если все числа совпали, то выводим `alert()` с поздравлениям, если не совпало хотя бы одно число, сразу выводим `alert()` с ошибкой
 
 
-let myArr = [3,5,2,6,8,1,7];
-let userArr = []
-alert (`Remember these numbers:
-${myArr}
+// let myArr = [3,5,2,6,8,1,7];
+// let userArr = []
+// alert (`Remember these numbers:
+// ${myArr}
 
-Enter each of these numbers in sequence.`);
+// Enter each of these numbers in sequence.`);
 
-    for (let i = 0; i < myArr.length; i++) {
+//     for (let i = 0; i < myArr.length; i++) {
 
-        userNumber = prompt(`enter ${i+1} number`)
+//         userInputString = prompt(`enter ${i+1} number`)
 
-        if (userNumber === null){
-            alert(`Input interrupted by user!`);
-            break;
-        }
+//         if (userInputString === null){
+//             alert(`Input interrupted by user!`);
+//             break;
+//         }
 
-        let userNumberNum = Number(userNumber);
+//         let userInputNumber = Number(userInputString);
         
-        if (isNaN(userNumberNum)){
-            alert(`This is not a number at all!`);
-            break;
-        } 
+//         if (isNaN(userInputNumber)){
+//             alert(`This is not a number at all!`);
+//             break;
+//         } 
 
-        if (userNumberNum !== myArr[i]){
-            alert(`Unfortunately it's wrong number!`);
-            break;
-        }
+//         if (userInputNumber !== myArr[i]){
+//             alert(`Unfortunately it's wrong number!`);
+//             break;
+//         }
 
-        userArr.push(userNumberNum);
+//         userArr.push(userInputNumber);
 
-         if (userArr.length === myArr.length){
-            alert(`You have an excellent memory!`)
-        }
+//          if (userArr.length === myArr.length){
+//             alert(`You have an excellent memory!`)
+//         }
 
-    };
+//     };
