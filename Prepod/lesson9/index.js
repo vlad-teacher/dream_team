@@ -199,22 +199,175 @@
 
 
 
-function findMaxNumberFromArray (kakojtoMassivChisel) {
+// function findMaxNumberFromArray (kakojtoMassivChisel) {
 
-    let maxNum = kakojtoMassivChisel[0];
+//     let maxNum = kakojtoMassivChisel[0];
 
-    for (let i = 0; i < kakojtoMassivChisel.length ; i++) {
-        if (maxNum < kakojtoMassivChisel[i]) {
-            maxNum = kakojtoMassivChisel[i];
-        }
-    }
+//     for (let i = 0; i < kakojtoMassivChisel.length ; i++) {
+//         if (maxNum < kakojtoMassivChisel[i]) {
+//             maxNum = kakojtoMassivChisel[i];
+//         }
+//     }
 
-    console.log(maxNum);
+//     console.log(maxNum);
+// }
+
+// findMaxNumberFromArray([1,5,67,2,65,8]);
+
+// findMaxNumberFromArray([7,2,5,43,34,5,6]);
+
+
+
+
+// Loops recap
+
+//2. Написать программу, которая выводит среднее арифметическое n чисел введенных пользователем. Ввод чисел прекращается, когда нажали отмена, после чего выводится среднее арифметическое.
+
+// 1. prompt многократно нужно брать числа
+// 2. break когда нажали отмена (если нажали отмена prompt вернет null)
+// 3. после break вывести среднее арифметическое (сложить все n чисел и посчитать их количество)
+// 4. нужно не забыть посчитать количество чисел (мб завести переменную ?)
+
+// let sum = 0;
+// let counter = 0;
+
+// for (;;) {
+//     const userNumber = prompt('enter a number');
+
+//     if (userNumber === null) {
+//         break;
+//     }
+
+//     counter += 1;
+//     sum += Number(userNumber);
+// }
+
+// console.log(sum/counter);
+
+
+//3. Написать программу, в которой пользователя просят ввести числа 5 раз. Причем каждое последующее число должно быть больше предыдущего, иначе вывести текст ошибка! в консоль и прекратить ввод.
+
+
+// 1. prompt, 5 раз
+// 2. след число > предыдущ (переменная > переменная2)
+// 3. если не больше то вывести ошибку, break
+
+// let prevNumber = Number(prompt('enter a number'));
+
+// for (let i = 0; i < 4 ; i++) {
+//     const nextNumber = Number(prompt('enter a number'));
+//     console.log('nextNumber', nextNumber);
+//     console.log('prevNumber',prevNumber);
+    
+//     if (nextNumber < prevNumber) {
+//         alert('ERROR!');
+//         break;
+//     }
+//     prevNumber = nextNumber;
+// }
+
+// const p1 = prompt('enter a number');
+
+// const p2 = prompt('enter a number');
+// // p2 > p1
+// const p3 = prompt('enter a number');
+// // p3 > p2
+// const p4 = prompt('enter a number');
+// // p4 > p3
+// const p5 = prompt('enter a number');
+// // p5 > p4
+
+// TODO: scope, default values, rest op in args, n args
+
+// function sum (a, b) { // a = 2, b = undefined
+//     console.log(a);
+//     console.log(b);
+// }
+
+// sum(2,3);
+
+// function declaration
+
+// sum(); // это работает!
+
+// function sum () {
+//     console.log('declaration works!');
+// }
+
+// function expression
+
+// sum(6, 2); // это не сработает!
+
+// const sum = function (a,b) {
+//     console.log(a - b);
+// };
+
+// hoisting всплытие переменных
+
+// jekiChan = undefined
+// decl <<<=== function
+// expres = undefined
+
+// console.log(jekiChan); // undefined
+
+// decl();
+// expres();
+
+// var jekiChan = 'good';
+
+// function decl () {}
+
+// var expres = function () {};
+
+// let a NOTE: не давать к ней доступ до того как случится let
+
+// const arr = [1,2,3];
+
+// arr.push(a);
+
+// console.log(arr);
+
+// let a = 2;
+
+
+// anonymous functions
+// function test () {}
+// function () {} // anonymous
+// const expr = function () {};
+// console.log( function () { 2 + 3 } );
+
+// IIFE immediately invoked function expression
+// (function (name) {
+//     console.log(name);
+// }) ()
+
+
+// function test () {}
+// const func = function () {}; // экспресшн
+// function () {}
+
+// if () {} 
+// for () {}
+
+// const arr = [];
+// const obj = {};
+// function () {} // переиспользовать логику (алгоритм)
+
+// TODO: return
+
+// 1. написать функцию getAnnualRating(), которая принимает 4
+// оценки за четверти, и выводит в консоль годовую оценку
+
+// 2. getDayOfWeek(), которая принимает номер дня недели
+// и выводит в консоль его название, если введен не сущетвующий
+// день недели, то функция должна выводить "такого дня нет"
+// *: продумайте функцию так, чтобы она могла выводить названия
+// на разных языках
+
+function getAnnualRating (q1, q2, q3, q4) {
+    const annualRating = (q1 + q2 + q3 + q4) / 4;
+
+    console.log(`Оценка за год: ${Math.round(annualRating)}`);
 }
 
-
-
-findMaxNumberFromArray([1,5,67,2,65,8]);
-
-findMaxNumberFromArray([7,2,5,43,34,5,6]);
-
+getAnnualRating(2,3,7,5);
