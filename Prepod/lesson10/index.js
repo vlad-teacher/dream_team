@@ -1,5 +1,6 @@
 // TODO: for, rest, spread, destructuriation, closure, arrow, this
 // TODO: scope, default values, rest op in args, n args
+// TODO: spread, rest objs
 
 // function sum ( a, b ) {
 
@@ -206,5 +207,5 @@
 // если первый аргумент 'right' то функция должна объединить массивы в таком порядке [a,b,n-args]
 // если первый аргумент 'left' то функция должна объединить массивы в таком порядке [n-args,b,a]
 
-concatArrs('right', [1,2,3], [4,5,6], 7,8,9); // [1,2,3,4,5,6,7,8,9]
-concatArrs('left', [1,2,3], [4,5,6], 7,8,9); // [7,8,9,4,5,6,1,2,3]
+// concatArrs('right', [1,2,3], [4,5,6], 7,8,9); // [1,2,3,4,5,6,7,8,9]
+// concatArrs('left', [1,2,3], [4,5,6], 7,8,9); // [7,8,9,4,5,6,1,2,3]
