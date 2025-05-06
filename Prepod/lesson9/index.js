@@ -1,4 +1,4 @@
-// TODO: for, rest, spread, destructuriation
+
 // Objects
 
 // Object example
@@ -277,7 +277,7 @@
 // const p5 = prompt('enter a number');
 // // p5 > p4
 
-// TODO: scope, default values, rest op in args, n args
+
 
 // function sum (a, b) { // a = 2, b = undefined
 //     console.log(a);
@@ -353,7 +353,7 @@
 // const obj = {};
 // function () {} // переиспользовать логику (алгоритм)
 
-// TODO: return
+
 
 // 1. написать функцию getAnnualRating(), которая принимает 4
 // оценки за четверти, и выводит в консоль годовую оценку
@@ -364,10 +364,12 @@
 // *: продумайте функцию так, чтобы она могла выводить названия
 // на разных языках
 
-function getAnnualRating (q1, q2, q3, q4) {
-    const annualRating = (q1 + q2 + q3 + q4) / 4;
+// function getAnnualRating (q1, q2, q3, q4) {
+//     const annualRating = (q1 + q2 + q3 + q4) / 4;
 
-    console.log(`Оценка за год: ${Math.round(annualRating)}`);
-}
+//     console.log(`Оценка за год: ${Math.round(annualRating)}`);
+// }
 
-getAnnualRating(2,3,7,5);
+// getAnnualRating(2,3,7,5);
+
+
