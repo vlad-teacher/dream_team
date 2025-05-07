@@ -141,3 +141,15 @@ const userChoiceToNumber = {
 //  }
 //}
 
+//function concatArrs (site, userArr1, userArr2, ...renumber){
+//  let resultArr = []
+//  if (site === 'right') {
+//      resultArr = [...userArr1, ...userArr2, ...renumber];
+//  } else {
+//      resultArr = [...renumber, ...userArr2, ...userArr1];
+//  }
+//  return resultArr
+//}
+
+//console.log(concatArrs('right', [1,2,3], [4,5,6], 7,8,9));
+//console.log(concatArrs('left', [1,2,3], [4,5,6], 7,8,9));
