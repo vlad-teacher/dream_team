@@ -15,7 +15,7 @@ console.log(
 
 //2. Сформировать массив длиной 10, в который с помощью цикла запушить только те числа которые делятся на 3 без остатка.
 let arr = [];
-      for (;arr.length < 10;) {
+      for (;arr.length < 5;) {
   userNumber = Number(prompt("введи число"));
   if (userNumber % 3 === 0) {
     arr.push(userNumber);
