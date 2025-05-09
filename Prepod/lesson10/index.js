@@ -209,3 +209,14 @@
 
 // concatArrs('right', [1,2,3], [4,5,6], 7,8,9); // [1,2,3,4,5,6,7,8,9]
 // concatArrs('left', [1,2,3], [4,5,6], 7,8,9); // [7,8,9,4,5,6,1,2,3]
+
+
+
+// function concatArrs (side, arr1, arr2, ...args) {
+//     return side === 'right' ? 
+//         [...arr1,...arr2,...args]:
+//         [...args, ...arr2, ...arr1];
+// }
+
+// console.log(concatArrs('right', [1,2,3], [4,5,6], 7,8,9));
+// console.log(concatArrs('left', [1,2,3], [4,5,6], 7,8,9));
