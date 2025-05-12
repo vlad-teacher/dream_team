@@ -27,7 +27,7 @@ function myStats(wins, losses) {
   }
 
   const winRate = Math.round((wins / totalGames) * 100);
-  const lossRate = 100 - winPercent;
+  const lossRate = 100 - winRate;
 
   console.log(`Ваш процент побед – ${winRate}%, поражений – ${lossRate}%`);
 }
