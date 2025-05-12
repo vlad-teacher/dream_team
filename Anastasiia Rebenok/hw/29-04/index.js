@@ -43,22 +43,22 @@
 // 3. Напишите функцию, которая возвращает процент побед и процент поражений в морской бой или шахматы. Функция принимает два параметра: первый это количество побед, а второй это количество поражений. Функция выводит в консоль результативность в процентах. Пример работы: `myStats(352,211)`, это значит было 352 победы и 211 поражений. Функция выводит сообщение «ваш процент побед - 62%, поражений – 38%»
 
 
-function WinningPercentage (WinningNum, LossNum){
+function winningPercentage (winningNum, lossNum){
     
-    if (WinningNum === 0 && LossNum === 0){
+    if (winningNum === 0 && lossNum === 0){
         console.log("No games played.");
         return
     };
 
-    let WinPercent = (WinningNum/(WinningNum+LossNum)) * 100;
-    let lossPercent = 100 - WinPercent
+    let winPercent = (winningNum/(winningNum+lossNum)) * 100;
+    let lossPercent = 100 - winPercent
 
-    console.log(`Yours percentage of wins is ${WinPercent.toFixed(2)}%,
+    console.log(`Yours percentage of wins is ${winPercent.toFixed(2)}%,
     The percentage von loss is ${lossPercent.toFixed(2)}%`);
 
 }
 
-WinningPercentage (15,16)
+winningPercentage (15,16)
 
 
 // // Задача 4. Функция `getDayOfWeek()`, которая принимает номер дня недели и выводит в консоль его название, если введен не сущетвующий день недели, то функция должна выводить "такого дня нет".
