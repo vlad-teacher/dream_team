@@ -10,3 +10,15 @@ function findMinMax(numbers) {
 }
 
 console.log(findMinMax([3, 8, 5, 9, 16, 1, 18, 2]));
+
+
+// 2. Напишите функцию `filterStrings`, которая принимает любое количество аргументов (REST) и возвращает только строки.
+// ```javascript
+// filterStrings(1, "hello", true, "world", 42); // ["hello", "world"]
+// ```
+
+function filterStrings(...args) {
+    return args.filter(item => typeof item ==="string");
+}
+
+console.log (filterStrings(1, "hello", true, "world", 42));
