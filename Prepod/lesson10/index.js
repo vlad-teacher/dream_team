@@ -1,6 +1,4 @@
-// TODO: for, rest, spread, destructuriation, closure, arrow, this
-// TODO: scope, default values, rest op in args, n args
-// TODO: spread, rest objs
+
 
 // function sum ( a, b ) {
 
@@ -356,7 +354,6 @@
 
 // const { userName, age, city, a = 'LALALA' } = person;
 // const { userName: userName2 = "Stas0", age: age2, ...rest } = person2;
-// TODO: destruct in funcs
 
 
 
@@ -429,5 +426,69 @@
 
 // const { b: { c: [ , myVar] } } = objOMG;
 
+
+
+// DOMASHKA RECAP
+
+// getDayOfWeek(), которая принимает номер дня недели и выводит в консоль его название, 
+// если введен не сущетвующий день недели, то функция должна выводить "такого дня нет". *: 
+// продумайте функцию так, чтобы она могла выводить названия на разных языках
+
+// const getDayOfWeek = function (dayNumber) {
+
+//     switch (dayNumber) {
+//         case 1:
+//             return 'Monday';
+//         case 2:
+//             return 'Tuesday';
+//         case 3:
+//             return 'Wednesday';
+//         case 4:
+//             return 'Thursday';
+//         case 5:
+//             return 'Friday';
+//         case 6:
+//             return 'Saturday';
+//         case 7:
+//             return 'Sunday';
+//         default: 
+//             return 'Monday';
+//     }
+
+// };
+
+// console.log(getDayOfWeek(72));
+
+
+// function getDayOfWeek (dayNumber) {
+//     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday', 'Sunday'];
+
+//     const day = days[dayNumber - 1];
+
+//     return day ? day : 'Monday';
+// }
+
+// console.log(getDayOfWeek(3));
+
+
+// function getDayOfWeek (dayNumber, lang) { // let dayNumber, let lang
+
+//     const dayLanguages = {
+//         en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday', 'Sunday'],
+//         de: ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'],
+//         defaults: {
+//             en: 'Monday',
+//             de: 'Montag'
+//         }
+//     }
+
+//     const day = dayLanguages[lang][dayNumber - 1];
+
+//     return day ? day : dayLanguages.defaults[lang];
+// }
+
+// const result = getDayOfWeek(22, 'en') ;
+
+// console.log( result );
 
 
