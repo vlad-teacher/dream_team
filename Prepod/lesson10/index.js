@@ -220,3 +220,214 @@
 
 // console.log(concatArrs('right', [1,2,3], [4,5,6], 7,8,9));
 // console.log(concatArrs('left', [1,2,3], [4,5,6], 7,8,9));
+
+
+
+// const obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: {
+//         d1: 1,
+//         d2: 2
+//     }
+// };
+
+// const obj2 = structuredClone(obj); // deep copy
+
+// obj2.d.d1 = 999;
+
+// console.log(obj);
+
+
+
+// const obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+// };
+
+// const obj2 = {
+//     a: 22,
+//     d: 4,
+//     e: 5
+// };
+
+// const result = {
+//     l: 100,
+//     ...obj2,
+//     p: 200,
+//     ...obj,
+//     u: 300
+// };
+
+// const result2 = Object.assign({a:1,b:2}, {a:11, c: 3});
+
+// console.log(result2);
+
+
+
+
+// const userName = prompt('enter ur name');
+
+// const adress = {
+//     street: 'asdasd',
+// };
+
+// const person = {
+//     age: 12,
+//     city: 'Berlin',
+//     userName, // userName: userName
+//     job: 'Programmer',
+//     adress
+// };
+
+
+// console.log(person);
+
+
+
+
+// const fieldName = 'earsAmount';
+
+// const person = {
+//     age: 12,
+//     city: 'Berlin',
+//     job: 'Programmer',
+//     [fieldName]: 2
+// };
+
+// console.log(person);
+
+
+// destructurization
+
+// const persons = ["Valerchik", "Oleg", "Afanasi", "Mitrofan", "Marfa"];
+
+// const valerchik = persons[0];
+// const oleg = persons[1];
+// const afanasi = persons[2];
+// const rest = persons.slice(3);
+// OR
+// const [a, b, c, ...rest] = persons; // const a = persons[0]; const b = persons[1]
+// const a = persons[0];
+// const b = persons[1];
+// const c = persons[2];
+// const rest = persons.slice(3);
+
+// const arr = [c,b,a];
+// const obj = { a,b,c };
+
+// console.log(obj);
+
+
+// const persons = ["Valerchik", "Oleg", "Afanasi", "Mitrofan", "Marfa"];
+
+// const [ , oleg, , mitrofan, ] = persons;
+
+
+// const persons = ["Valerchik", "Oleg", "Afanasi"];
+
+// const [
+//     a = "Stas0",
+//     b = "Zina1",
+//     c = 2,
+//     d = [1,2,3],
+//     e = false
+// ] = persons;
+
+// console.log(persons);
+
+
+// obj destructurization ДЕ СТРУ КТУ РИ ЗА ЦИ Я
+
+// const person = {
+//     userName: "Valerchik",
+//     city: "Berlin",
+//     age: 23,
+// };
+
+// const person2 = {
+//     userName: "Oleg",
+//     city: "Keln",
+//     age: 123,
+//     cardNumber: 123123
+// };
+
+// const { userName, age, city, a = 'LALALA' } = person;
+// const { userName: userName2 = "Stas0", age: age2, ...rest } = person2;
+// TODO: destruct in funcs
+
+
+
+// const person = {
+//     userName: "Valerchik",
+//     city: "Berlin",
+//     age: 23,
+// };
+
+// const person2 = {
+//     userName: "Oleg",
+//     city: "Keln",
+//     age: 123,
+//     cardNumber: 123123
+// };
+
+// Деструктуризация работает точно так же и внутри аргументов функций
+// function getOldestAge ({age}  , {age: age2}) { // [a,b,c], [d,e,f]
+//     if (age > age2) {
+//         return age;
+//     } else {
+//         return age2;
+//     }
+// }
+
+
+// console.log( getOldestAge(person, person2) );
+
+
+// const objOMG = {
+//     a: 1,
+//     b: {
+//         c: [1,2,3],
+//         d: [
+//             {
+//                 e: 2
+//             },
+//             {
+//                 e: 3
+//             },
+//             {
+//                 e: 4
+//             }
+//         ],
+//         f: 'Hello'
+//     },
+//     k: [
+//         {
+//             p: ["one", "two", "three"]
+//         },
+//         {
+//             p: ["four", "five"]
+//         }
+//     ]
+// };
+
+// const { b: { c }, k: [ { p } ] } = objOMG;
+// const result = [ ...c, ...p ];
+
+
+
+
+
+
+
+// 1. добыть значение 4 из поля e
+// 2. добыть строку 'Hello'
+// 3. добыть "three" из массива p
+
+
+// const { b: { c: [ , myVar] } } = objOMG;
+
+
+
