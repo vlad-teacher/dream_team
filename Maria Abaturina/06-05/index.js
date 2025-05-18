@@ -15,7 +15,7 @@
 // function filterStrings(...args) {
 //   let result = [];
 //   for (let i = 0; i < args.length; i++) {
-//     current = args[i];
+//     let current = args[i];
 //     if (typeof current === "string") {
 //       result.push(current);
 //     }
@@ -29,8 +29,8 @@
 // mergeArrays([1, 2], [3, 4], [5, 6],[7, 8]); // [1, 2, 3, 4, 5, 6, 7, 8]
 // ```
 
-function mergeArrays(...arrays) {
-  return [].concat(...arrays);
-}  
-console.log(mergeArrays([1, 2], [3, 4], [5, 6]));
-console.log(mergeArrays([1, 2], [3, 4], [5, 6], [7, 8]));
+// function mergeArrays(...arrays) {
+//   return [].concat(...arrays);
+// }
+// console.log(mergeArrays([1, 2], [3, 4], [5, 6]));
+// console.log(mergeArrays([1, 2], [3, 4], [5, 6], [7, 8]));
