@@ -22,3 +22,18 @@ function filterStrings(...args) {
 }
 
 console.log (filterStrings(1, "hello", true, "world", 42));
+
+
+// 3. Напишите функцию `mergeArrays`, которая принимает любое количество массивов и объединяет их в один с помощью SPREAD оператора.
+
+// ```javascript
+// mergeArrays([1, 2], [3, 4], [5, 6]); // [1, 2, 3, 4, 5, 6]
+// mergeArrays([1, 2], [3, 4], [5, 6],[7, 8]); // [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+function mergeArrays(...arrays){
+  return [].concat(...arrays);
+
+}
+console.log(mergeArrays([1, 2], [3, 4], [5, 6]));
+console.log(mergeArrays([1, 2], [3, 4], [5, 6], [7, 8]));
