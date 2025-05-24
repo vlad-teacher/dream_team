@@ -31,20 +31,24 @@
 // *: продумайте функцию так, чтобы она могла выводить названия на разных языках
 
 // function getDayOfWeek(dayNumber) {
-//   const daysOfWeek = {
-//     1: "Понедельник",
-//     2: "Вторник",
-//     3: "Среда",
-//     4: "Четверг",
-//     5: "Пятница",
-//     6: "Суббота",
-//     7: "Воскресенье",
-//   };
-
-//   if (dayNumber > 7) {
-//     alert("Такого дня нет");
+//   switch (dayNumber) {
+//     case 1:
+//       return "Monday";
+//     case 2:
+//       return "Tuesday";
+//     case 3:
+//       return "Wednesday";
+//     case 4:
+//       return "Thursday";
+//     case 5:
+//       return "Friday";
+//     case 6:
+//       return "Saturday";
+//     case 7:
+//       return "Sunday";
+//     default:
+//       return "Нет такого дня недели";
 //   }
 // }
-// getDayOfWeek(3);
 
-// Я не понимаю как вывести нужный день недели((
+// console.log(getDayOfWeek(3));
