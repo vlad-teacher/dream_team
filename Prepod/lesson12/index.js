@@ -1,5 +1,5 @@
-// TODO: closure, bind, callback, class, get set ?
-// TODO: settiemout, serinterval, instanceof, static, #, errors + classes
+// TODO: closure, bind, callback ?
+// TODO: settiemout, serinterval, static,  errors + classes, super
 
 "use strict";
 
@@ -187,26 +187,26 @@
 // 3. как вычислить длину линии
 // 4. как вычислить существование треугольника
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 100);
-}
+// function getRandomNumber() {
+//   return Math.floor(Math.random() * 100);
+// }
 
-class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-}
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+// }
 
-const points = [];
+// const points = [];
 
-for (let i = 0; i < 6; i++) {
-  const randomNumber1 = getRandomNumber();
-  const randomNumber2 = getRandomNumber();
+// for (let i = 0; i < 6; i++) {
+//   const randomNumber1 = getRandomNumber();
+//   const randomNumber2 = getRandomNumber();
 
-  const point = new Point(randomNumber1, randomNumber2);
-  points.push(point);
-}
+//   const point = new Point(randomNumber1, randomNumber2);
+//   points.push(point);
+// }
 
 class Line {
   constructor(point1, point2) {
@@ -214,32 +214,144 @@ class Line {
     this.end = point2; // {x: 23, y: 64}
   }
 
-  getLength() {
+
+  get length () {
     return Math.round(
-      Math.sqrt(
-        (this.end.x - this.start.x) ** 2 + (this.end.y - this.start.y) ** 2
-      )
-    );
+        Math.sqrt(
+          (this.end.x - this.start.x) ** 2 + (this.end.y - this.start.y) ** 2
+        )
+      );
   }
+
+  set length (val) {}
+
 }
 
-const l1 = new Line(points[0], points[1]);
-const l2 = new Line(points[2], points[3]);
-const l3 = new Line(points[4], points[5]);
+// const l1 = new Line(points[0], points[1]);
+// const l2 = new Line(points[2], points[3]);
+// const l3 = new Line(points[4], points[5]);
 
-function canTriangleExist (line1, line2, line3) {
-    const line1Length = line1.getLength();
-    const line2Length = line2.getLength();
-    const line3Length = line3.getLength();
+// function canTriangleExist (line1, line2, line3) {
+//     const line1Length = line1.length;
+//     const line2Length = line2.length;
+//     const line3Length = line3.length;
    
-    return (line1Length < line2Length + line3Length) &&
-        (line2Length < line1Length + line3Length) &&
-        (line3Length < line1Length + line2Length)
-}
+//     return (line1Length < line2Length + line3Length) &&
+//         (line2Length < line1Length + line3Length) &&
+//         (line3Length < line1Length + line2Length)
+// }
 
 
-if ( canTriangleExist(l1,l2,l3) ) {
-    console.log('triangle can exist!');
-} else {
-    console.log('triangle can not exist!');
-}
+
+
+
+// if ( canTriangleExist(l1,l2,l3) ) {
+//     console.log('triangle can exist!');
+// } else {
+//     console.log('triangle can not exist!');
+// }
+
+
+// getters setters
+
+// class Person {
+//     #age;
+
+//     constructor (firstName, age) {
+//         this.firstName = firstName;
+//         this.#age = age;
+//     }
+
+//     get age () {
+//         return this.#age;
+//     }
+
+//     set age (val) {
+//         if (val > 0 && val < 100) {
+//             this.#age = val;
+//         }
+//     }
+// }
+
+// const p1 = new Person('Valerchik', 32);
+
+
+// создать класс Person
+// инстанс этого класса должен обладать полями firstName и lastName
+// с помощью геттеров и сеттеров сделать поле fullName
+// например:
+// const person = {
+//     firstName: 'Valerchik',
+//     lastName: 'Sharikov'
+// };
+
+// console.log(person.fullName); // Valerchik Sharikov
+
+
+
+// class Car {
+//     #amortization;
+
+//     constructor (model) {
+//         this.model = model;
+//         this.#amortization = 0;
+//         this.color = 'red';
+//     }
+
+//     run () {
+//         if (this.amortization < 100) {
+//             console.log(`${this.model} runs`);
+//             this.amortization += 10;
+//         } else {
+//             console.error('car is broken');
+//         }
+//     }
+
+//     static wheelsAmount = 4;
+
+//     static paint (mashinka) {
+//         mashinka.color = 'orange';
+//     }
+
+//     static repair (mashinka) {
+
+//         if (!(mashinka instanceof Car)) {
+//             console.error(`класс может чинить только те машинки которые произвел`);
+//         } else {
+//             mashinka.#amortization = 0;
+//         }
+      
+//     }
+
+//     get amortization () {
+//         return this.#amortization;
+//     }
+
+//     set amortization (val) {
+//         if ( val <= 100) {
+//             this.#amortization = val;
+//         }
+//     }
+// }
+
+// const c1 = new Car('X5');
+
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+// c1.run();
+
+
+// console.log( Car.wheelsAmount );
+
+
+// Car.repair({firstName: 'Valerchik'})
