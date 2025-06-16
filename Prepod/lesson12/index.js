@@ -1,5 +1,4 @@
-// TODO: closure, bind, callback ?
-// TODO: settiemout, serinterval, static,  errors + classes, super
+
 
 "use strict";
 
@@ -208,24 +207,24 @@
 //   points.push(point);
 // }
 
-class Line {
-  constructor(point1, point2) {
-    this.start = point1;
-    this.end = point2; // {x: 23, y: 64}
-  }
+// class Line {
+//   constructor(point1, point2) {
+//     this.start = point1;
+//     this.end = point2; // {x: 23, y: 64}
+//   }
 
 
-  get length () {
-    return Math.round(
-        Math.sqrt(
-          (this.end.x - this.start.x) ** 2 + (this.end.y - this.start.y) ** 2
-        )
-      );
-  }
+//   get length () {
+//     return Math.round(
+//         Math.sqrt(
+//           (this.end.x - this.start.x) ** 2 + (this.end.y - this.start.y) ** 2
+//         )
+//       );
+//   }
 
-  set length (val) {}
+//   set length (val) {}
 
-}
+// }
 
 // const l1 = new Line(points[0], points[1]);
 // const l2 = new Line(points[2], points[3]);
@@ -355,3 +354,229 @@ class Line {
 
 
 // Car.repair({firstName: 'Valerchik'})
+
+// class Vehicle {
+//   constructor (vehicleName, wheels) {
+//     this.vehicleName = vehicleName;
+//     this.wheels = wheels;
+//   }
+
+//   run () {
+//     console.log(`${this.vehicleName} runs`);
+//   }
+// }
+
+// class ElectroVehicle extends Vehicle {
+//   constructor (batteryVolume, ...args) {
+//     super(...args);
+//     this.batteryVolume = batteryVolume;
+//   }
+
+//   bzz () {
+//     console.log('bzzz');
+//   }
+// }
+
+// class ElectroBicycle extends ElectroVehicle {
+//   constructor (batteryVolume, vehicleName) {
+//     super(batteryVolume, vehicleName, 2);
+//     this.smth = 2;
+//   }
+// }
+
+// class ElectroCar extends ElectroVehicle {
+//   constructor (seats, batteryVolume,vehicleName) {
+//     super(batteryVolume, vehicleName, 4);
+//     this.seats = seats;
+//   }
+// }
+
+// class ElectroCar2 extends ElectroVehicle {
+//   constructor () {
+//     super(40, 'Tesla', 4);
+//     this.seats = seats;
+//   }
+// }
+
+
+// const tesla2 = new ElectroCar2();
+// const byd = new ElectroCar(2, 80);
+
+
+// Создать класс Battery, который инициализирует поля type (AA, AAA),
+// energy (заряд, по умолчанию 100, заряд не может быть меньше 0 и больше 100).
+
+// Создать класс Device, который принимает параметр batteryType (AA, AAA) и имеет метод
+// insertBattery, который принимает два параметра (две
+// батарейки, два объекта типа Battery). 
+// 
+// Создать класс Gamepad, который наследует от
+// Device. Инстанс класса Gamepad должен содержать поле model, поле
+// isConnected (boolean) и методы connectTo(deviceName), который
+// принимает название другого девайса и выводит сообщение
+// типа “gamepadModel connected to TV”
+// , метод disconnect() (который переключает isConnected в false),
+// который отключает Gamepad,
+// также должен быть метод play(), который
+// отнимает 10 зарядов от каждой батареи (и выводит в консоль сообщение вида "you are playing!")
+
+
+// Подключить один девайс к другому можно только если есть
+// 2 батарейки (и заряд обеих больше 0). Подключить Gamepad можно только если
+// isConnected == false. 
+// Если заряд батареек == 0, то метод
+// play вернет сообщение с требованием замены батареек.
+
+// class BatterTypeError extends Error {
+//   constructor (battery1Error,battery2Error, message) {
+//     super(message);
+//     this.battery1Error = battery1Error;
+//     this.battery2Error = battery2Error;
+//   }
+// }
+
+// class BatteryEnergyError extends Error {}
+
+
+// class Battery {
+//   #energy = 100;
+
+//   constructor (type) {
+//     if (type === 'AA' || type === 'AAA') {
+//       this.type = type;
+//     } else {
+//       console.error('Type should be AA or AAA');
+//     }
+//   }
+
+//   get energy () {
+//     return this.#energy;
+//   }
+
+//   set energy (value) {
+//     if (value >= 0 && value <= 100) {
+//       this.#energy = value;
+//     }
+//   }
+// }
+
+// const b1 = new Battery('AAA');
+// const b2 = new Battery('AAA');
+// const b3 = new Battery('AA');
+
+// class Device {
+//   constructor (batteryType) {
+//     this.batteryType = batteryType;
+//     this.battery1 = null;
+//     this.battery2 = null;
+//   }
+
+//   insertBattery (b1, b2) {
+//     if ( !(b1 instanceof Battery && b2 instanceof Battery) ) {
+//       throw new Error(`Вы должны передеавать инстанс батарейки, ваши аргументы:
+//         1. является батарейкой: ${b1 instanceof Battery}
+//         2. является батарейкой: ${b2 instanceof Battery}
+//         `);
+//     }
+
+
+//     const isB1Ok = b1.type !== this.batteryType;
+//     const isB2Ok = b2.type !== this.batteryType;
+//     if ( isB1Ok || isB2Ok ) {
+//       throw new BatterTypeError(isB1Ok, isB2Ok,  `Батарейки не того типа: инстанс ожидает тип ${this.batteryType}, 
+//         а вы передаете тип ${b1.type} и ${b2.type}`);
+//     } else {
+//       this.battery1 = b1;
+//       this.battery2 = b2;
+//       console.log('батарейки вставлены');
+//     }
+//   }
+
+//   batteriesWork () {
+//     return Boolean(this.battery1) && Boolean(this.battery2) && this.battery1.energy > 0 && this.battery2.energy > 0;
+//   }
+// }
+
+// class Gamepad extends Device {
+//   constructor (model, batteryType) {
+//     super(batteryType);
+//     this.model = model;
+//     this.isConnected = false;
+//   }
+
+//   connectTo (deviceName) {
+//     if (this.batteriesWork()) {
+//       this.isConnected = true;
+//       console.log(`${this.model} подключен к ${deviceName}`);
+//     } else {
+//       console.log(`проверьте батарейки`);
+//     }
+//   }
+
+//   disconnect () {
+//     this.isConnected = false;
+//     console.log(`${this.model} отключен`);
+//   }
+
+//   play () {
+//     if (!this.isConnected) {
+//       throw new Error('геймпад не подключен');
+//     }
+
+//     if (!this.batteriesWork()) {
+//       throw `проверьте батарейки`;
+//     }
+
+//     this.battery1.energy -= 10;
+//     this.battery2.energy -= 10;
+//     console.log(`вы играете!`);
+
+//   }
+// }
+
+// const xboxGamepad = new Gamepad('xbox gamepad', 'AAA');
+
+
+//   try {
+//     xboxGamepad.insertBattery(b6, b7);
+//   } catch (err) {
+  
+//     if (err instanceof BatterTypeError) { // 1. ЭТО НАША ОШИБКА ?
+//       if (err.battery1Error) {
+//         xboxGamepad.insertBattery(b1, b2);
+//       } else if (err.battery2Error) {
+//         xboxGamepad.insertBattery(b1, b2);
+//       } else  {
+//         throw err;
+//       }
+      
+//       console.log('НАША ОШИБКА, МЫ ВЫЛЕЧИЛИ');
+//     } else {
+//       console.log('О БОЖЕ МОЙ! ЭТО КАКОЙ ТО УЖАС БРОСАЕМСЯ ДАЛЬШЕ!');
+//       throw err // 2. ДАТЬ СЛУЧИТСЯ ОШИБКЕ ЕСЛИ ОНА НЕ НАША!
+//     }
+   
+//   }
+
+
+
+// xboxGamepad.connectTo('TV');
+// xboxGamepad.play();
+// xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.disconnect();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // xboxGamepad.play();
+// // console.log(xboxGamepad);
+// // xboxGamepad.play();
+
+
