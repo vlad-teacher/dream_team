@@ -26,3 +26,11 @@
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#start {
+  display: none;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px auto;
+}
