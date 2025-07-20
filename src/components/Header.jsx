@@ -4,8 +4,20 @@ const Header = ({ word, guessedLetters, wrongCount }) => {
   return (
     <header>
       <div className="blockGallows">
+        <div className="gameRules">
+<p  className="rules"> <strong>
+Game rules:
+You need to guess the brand of the car.
+You have three attempts. You can enter one letter at a time.
+</strong>
 
-         <img className="logoGallows" src="/img/logo.png" alt="#" width={120} height={120} />
+
+</p>
+
+        </div>
+
+         {/* <img className="logoGallows" src="/img/logo.png" alt="#" width={120} height={120} /> */}
+         <img className="logoGallows" src="/img/klipartz.com (1).png" alt="#" width={100} height={100} />
   </div>
    
 
