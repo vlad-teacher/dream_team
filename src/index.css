@@ -23,13 +23,13 @@ header {
   width: 460px;
   height: auto;
   padding: 28px;
-  background: linear-gradient(145deg, #1a1f1c, #2c3430); /* чуть светлее */
+  background: linear-gradient(145deg, #1a1f1c, #2c3430); 
   border-radius: 20px;
   border: 2px solid #3e4a44;
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.85),  /* внешняя тень */
-    inset 3px 3px 8px rgba(0, 0, 0, 0.6), /* внутренняя тень тёмная */
-    inset -3px -3px 6px rgba(255, 255, 255, 0.05); /* свет сверху */
+    0 12px 24px rgba(0, 0, 0, 0.85),  
+    inset 3px 3px 8px rgba(0, 0, 0, 0.6), 
+    inset -3px -3px 6px rgba(255, 255, 255, 0.05); 
   text-align: center;
   color: #d3ded8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -61,8 +61,27 @@ header {
   margin-top: 2px;
   margin-left: 330px;
   z-index: 10;
-  
+  border-radius: 50%;
+  padding: 10px;
+  background: radial-gradient(circle at center, #1f1f1f, #000000);
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.3),
+    0 0 20px rgba(255, 0, 0, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  border: 2px solid #3a3a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.4));
+  cursor: pointer;
 }
+
+.logoGallows:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow:
+    0 0 15px rgba(255, 100, 100, 0.4),
+    0 0 25px rgba(255, 0, 0, 0.5);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+}
+
 
 .blockGallows{
   position: absolute;
@@ -175,7 +194,7 @@ header {
   text-align: center;
   border: none;
 
-  /* Эффект 3D выпуклости */
+ 
   box-shadow:
     inset -2px -2px 5px rgba(255, 255, 255, 0.1),
     inset 2px 2px 5px rgba(0, 0, 0, 0.5),

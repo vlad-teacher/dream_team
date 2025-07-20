@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Input from "./components/Input";
 import "./App.css";
 
-const words = ["AUDI", "BMW", "HONDA", "TOYOTA", "TESLA"];
+const words = ["Lada", "Mercedes", "Toyota", "Nissan", "BMW", "Audi", "Volkswagen", "Hyundai", "Kia", "Skoda", "Renault", "Ford", "Chevrolet", "Mazda", "Mitsubishi", "Subaru", "Honda", "Volvo", "Opel", "Peugeot", "Fiat", "Citroen", "Suzuki", "Lexus", "Infiniti", "Land Rover", "Porsche", "Jaguar", "Maserati", "Alfa Romeo", "Aston Martin", "Bentley", "Bugatti", "Ferrari", "Lamborghini", "Mini", "Smart", "SsangYong", "Dodge", "Chrysler", "Jeep", "Cadillac", "Buick", "GMC", "Lincoln", "Acura", "Genesis", "MG", "Haval", "Chery", "Geely", "Changan", "BYD", "FAW", "Zotye", "Lifan", "Brilliance", "Dongfeng", "Jac"];
 
 const App = () => {
   const [word, setWord] = useState("");
