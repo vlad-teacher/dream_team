@@ -3,7 +3,17 @@ import Header from "./components/Header";
 import Input from "./components/Input";
 import "./App.css";
 
-const words = ["Lada", "Mercedes", "Toyota", "Nissan", "BMW", "Audi", "Volkswagen", "Hyundai", "Kia", "Skoda", "Renault", "Ford", "Chevrolet", "Mazda", "Mitsubishi", "Subaru", "Honda", "Volvo", "Opel", "Peugeot", "Fiat", "Citroen", "Suzuki", "Lexus", "Infiniti", "Land Rover", "Porsche", "Jaguar", "Maserati", "Alfa Romeo", "Aston Martin", "Bentley", "Bugatti", "Ferrari", "Lamborghini", "Mini", "Smart", "SsangYong", "Dodge", "Chrysler", "Jeep", "Cadillac", "Buick", "GMC", "Lincoln", "Acura", "Genesis", "MG", "Haval", "Chery", "Geely", "Changan", "BYD", "FAW", "Zotye", "Lifan", "Brilliance", "Dongfeng", "Jac"];
+const words = [
+  "Lada", "Mercedes", "Toyota", "Nissan", "BMW", "Audi", "Volkswagen",
+  "Hyundai", "Kia", "Skoda", "Renault", "Ford", "Chevrolet", "Mazda",
+  "Mitsubishi", "Subaru", "Honda", "Volvo", "Opel", "Peugeot", "Fiat",
+  "Citroen", "Suzuki", "Lexus", "Infiniti", "Land Rover", "Porsche",
+  "Jaguar", "Maserati", "Alfa Romeo", "Aston Martin", "Bentley", "Bugatti",
+  "Ferrari", "Lamborghini", "Mini", "Smart", "SsangYong", "Dodge",
+  "Chrysler", "Jeep", "Cadillac", "Buick", "GMC", "Lincoln", "Acura",
+  "Genesis", "MG", "Haval", "Chery", "Geely", "Changan", "BYD", "FAW",
+  "Zotye", "Lifan", "Brilliance", "Dongfeng", "Jac"
+];
 
 const App = () => {
   const [word, setWord] = useState("");
@@ -13,6 +23,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [musicStarted, setMusicStarted] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(true); // для переключения иконки
 
   const correctAudio = useRef(null);
   const wrongAudio = useRef(null);
@@ -33,16 +44,17 @@ const App = () => {
     const playMusic = () => {
       if (!musicStarted) {
         music.current.play()
-          .then(() => setMusicStarted(true))
+          .then(() => {
+            setMusicStarted(true);
+            setMusicPlaying(true);
+          })
           .catch((err) => {
-            console.log("Не удалось запустить музыку автоматически:", err);
+            console.log("Не удалось запустить музыку:", err);
           });
       }
     };
 
-    // Первый клик по окну включает музыку
     window.addEventListener("click", playMusic, { once: true });
-
     startGame();
 
     return () => {
@@ -68,14 +80,13 @@ const App = () => {
 
   const startGame = () => {
     const randomWord = words[Math.floor(Math.random() * words.length)];
-    setWord(randomWord);
+    setWord(randomWord.toUpperCase());
     setGuessedLetters([]);
     setInput("");
     setMistakes(0);
     setGameOver(false);
     setWin(false);
 
-    // При ручном запуске — пробуем включить музыку, если пользователь кликнул
     if (music.current && music.current.paused && musicStarted) {
       music.current.play().catch(() => {
         console.log("Повторный запуск музыки не удался");
@@ -87,7 +98,7 @@ const App = () => {
     if (e.key === "Enter") {
       const letter = input.toUpperCase();
 
-      if (letter && /^[A-Z]$/.test(letter) && !gameOver) {
+      if (letter && /^[A-ZА-Я]$/.test(letter) && !gameOver) {
         if (word.includes(letter)) {
           if (!guessedLetters.includes(letter)) {
             setGuessedLetters((prev) => [...prev, letter]);
@@ -102,6 +113,18 @@ const App = () => {
     }
   };
 
+  const toggleMusic = () => {
+    if (music.current) {
+      if (music.current.paused) {
+        music.current.play();
+        setMusicPlaying(true);
+      } else {
+        music.current.pause();
+        setMusicPlaying(false);
+      }
+    }
+  };
+
   const renderWord = () => {
     return word.split("").map((letter, index) => (
       <span key={index} className="letterSpan">
@@ -112,6 +135,11 @@ const App = () => {
 
   return (
     <div className="app">
+      {/* Кнопка звука */}
+      <button className="sound-toggle" onClick={toggleMusic}>
+        {musicPlaying ? "🔊" : "🔇"}
+      </button>
+
       <Header word={word} guessedLetters={guessedLetters} wrongCount={mistakes} />
 
       <img
@@ -140,12 +168,6 @@ const App = () => {
           </button>
         </div>
       )}
-
-      <div style={{ marginTop: 30, textAlign: "center" }}>
-        <button onClick={startGame} className="restart-button">
-          Start a New Game
-        </button>
-      </div>
     </div>
   );
 };

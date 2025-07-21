@@ -4,7 +4,10 @@ const Header = ({ word, guessedLetters, wrongCount }) => {
   return (
     <header>
       <div className="blockGallows">
+        
+        
         <div className="gameRules">
+
           <p className="rules">
             {" "}
             <strong>
