@@ -48,7 +48,7 @@ header {
   align-items: center;
   position: absolute;
   top: 290px;
-  left: 200px;
+  left: 1200px;
   transform: translate(-50%, -50%);
   width: 460px;
   height: auto;
@@ -323,4 +323,69 @@ header {
     inset -1px -1px 4px rgba(255, 255, 255, 0.15),
     inset 1px 1px 3px rgba(0, 0, 0, 0.4),
     0 8px 20px rgba(0, 0, 0, 0.8);
+}
+  .sidebar {
+  position: absolute;
+  left: 20px;
+  top: 160px;
+  background: linear-gradient(145deg, #1a1f1c, #2c3430);
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #3e4a44;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.85),
+    inset 3px 3px 8px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.05);
+  z-index: 999;
+  width: 180px;
+  color: #d3ded8;
+}
+
+.sidebar h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #e0e8e4;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.category-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: rgb(33, 37, 37);
+  border: 2px solid rgb(33, 37, 37);
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(202, 187, 187);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+
+  box-shadow:
+    inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    0 5px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: rgb(50, 55, 55);
+  transform: scale(1.05);
+  box-shadow:
+    inset -1px -1px 4px rgba(255, 255, 255, 0.1),
+    inset 1px 1px 4px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.category-button.active {
+  background-color: #ff4444;
+  border-color: #ff0000;
+  color: #fff;
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.6),
+    inset 0 0 6px rgba(255, 255, 255, 0.05);
+  transform: scale(1.07);
 }

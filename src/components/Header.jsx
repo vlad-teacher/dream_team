@@ -11,8 +11,7 @@ const Header = ({ word, guessedLetters, wrongCount }) => {
           <p className="rules">
             {" "}
             <strong>
-              Game rules: You need to guess the brand of the car. You have three
-              attempts. You can enter one letter at a time.
+              Game rules: you need to choose a category in the menu and guess the word from the chosen category. You have three attempts.
             </strong>
           </p>
         </div>

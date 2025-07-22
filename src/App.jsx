@@ -3,19 +3,25 @@ import Header from "./components/Header";
 import Input from "./components/Input";
 import "./App.css";
 
-const words = [
-  "Lada", "Mercedes", "Toyota", "Nissan", "BMW", "Audi", "Volkswagen",
-  "Hyundai", "Kia", "Skoda", "Renault", "Ford", "Chevrolet", "Mazda",
-  "Mitsubishi", "Subaru", "Honda", "Volvo", "Opel", "Peugeot", "Fiat",
-  "Citroen", "Suzuki", "Lexus", "Infiniti", "Land Rover", "Porsche",
-  "Jaguar", "Maserati", "Alfa Romeo", "Aston Martin", "Bentley", "Bugatti",
-  "Ferrari", "Lamborghini", "Mini", "Smart", "SsangYong", "Dodge",
-  "Chrysler", "Jeep", "Cadillac", "Buick", "GMC", "Lincoln", "Acura",
-  "Genesis", "MG", "Haval", "Chery", "Geely", "Changan", "BYD", "FAW",
-  "Zotye", "Lifan", "Brilliance", "Dongfeng", "Jac"
-];
+const categories = {
+  cars: [
+    "Lada", "Mercedes", "Toyota", "Nissan", "BMW", "Audi", "Volkswagen",
+    "Hyundai", "Kia", "Skoda", "Renault", "Ford", "Chevrolet", "Mazda",
+    "Mitsubishi", "Subaru", "Honda", "Volvo", "Opel", "Peugeot", "Fiat",
+    "Citroen", "Suzuki", "Lexus", "Infiniti", "Land Rover", "Porsche",
+    "Jaguar", "Maserati", "Alfa Romeo", "Aston Martin", "Bentley", "Bugatti",
+    "Ferrari", "Lamborghini", "Mini", "Smart", "SsangYong", "Dodge",
+    "Chrysler", "Jeep", "Cadillac", "Buick", "GMC", "Lincoln", "Acura",
+    "Genesis", "MG", "Haval", "Chery", "Geely", "Changan", "BYD", "FAW",
+    "Zotye", "Lifan", "Brilliance", "Dongfeng", "Jac"
+  ],
+  animals: ["Dog", "Cat", "Elephant", "Tiger", "Lion", "Fox", "Horse"],
+  fruits: ["Apple", "Banana", "Mango", "Orange", "Grape", "Peach"],
+  countries: ["Poland", "Germany", "Japan", "Brazil", "Canada", "Spain"]
+};
 
 const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState("cars");
   const [word, setWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [input, setInput] = useState("");
@@ -23,7 +29,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [musicStarted, setMusicStarted] = useState(false);
-  const [musicPlaying, setMusicPlaying] = useState(true); // для переключения иконки
+  const [musicPlaying, setMusicPlaying] = useState(true);
 
   const correctAudio = useRef(null);
   const wrongAudio = useRef(null);
@@ -79,7 +85,8 @@ const App = () => {
   }, [guessedLetters, mistakes, word, gameOver]);
 
   const startGame = () => {
-    const randomWord = words[Math.floor(Math.random() * words.length)];
+    const currentWords = categories[selectedCategory];
+    const randomWord = currentWords[Math.floor(Math.random() * currentWords.length)];
     setWord(randomWord.toUpperCase());
     setGuessedLetters([]);
     setInput("");
@@ -97,7 +104,6 @@ const App = () => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       const letter = input.toUpperCase();
-
       if (letter && /^[A-ZА-Я]$/.test(letter) && !gameOver) {
         if (word.includes(letter)) {
           if (!guessedLetters.includes(letter)) {
@@ -135,7 +141,22 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Кнопка звука */}
+      <div className="sidebar">
+        <h3>Choose Category</h3>
+        {Object.keys(categories).map((cat) => (
+          <button
+            key={cat}
+            className={`category-button ${selectedCategory === cat ? "active" : ""}`}
+            onClick={() => {
+              setSelectedCategory(cat);
+              setTimeout(startGame, 100);
+            }}
+          >
+            {cat.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
       <button className="sound-toggle" onClick={toggleMusic}>
         {musicPlaying ? "🔊" : "🔇"}
       </button>
@@ -173,5 +194,3 @@ const App = () => {
 };
 
 export default App;
-
-
