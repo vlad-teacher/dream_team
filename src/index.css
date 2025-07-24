@@ -6,40 +6,45 @@
 
 body {
   background-image: url("/img/—Pngtree—black dark greenish blue dramatic_15437455 (1).jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 header {
   position: relative;
   display: flex;
   justify-content: center;
+  padding: 15px 0;
 }
 
 .sound-toggle {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
+  top: 12px;
+  right: 12px;
+  width: 38px;  /* уменьшено */
+  height: 38px; /* уменьшено */
   background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
   border: none;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     inset -2px -2px 5px rgba(255, 255, 255, 0.05),
     inset 2px 2px 5px rgba(0, 0, 0, 0.8),
     2px 2px 5px rgba(0, 0, 0, 0.6);
   color: #f1f1f1;
-  font-size: 18px;
+  font-size: 18px; /* уменьшено */
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 1000;
 }
 
 .sound-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 
+  transform: scale(1.1);
+  box-shadow:
     inset -1px -1px 3px rgba(255, 255, 255, 0.05),
     inset 1px 1px 3px rgba(0, 0, 0, 0.6),
-    1px 1px 6px rgba(255, 0, 0, 0.4);
+    0 0 15px rgba(255, 0, 0, 0.7);
 }
 
 .gameRules {
@@ -47,17 +52,16 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 290px;
-  left: 1200px;
+  top: 270px; /* чуть поднял */
+  left: 1150px; /* немного сместил левее */
   transform: translate(-50%, -50%);
-  width: 460px;
-  height: auto;
-  padding: 28px;
+  width: 420px; /* уменьшена ширина */
+  padding: 22px; /* уменьшен padding */
   background: linear-gradient(145deg, #1a1f1c, #2c3430);
-  border-radius: 20px;
+  border-radius: 18px;
   border: 2px solid #3e4a44;
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.85),
+    0 10px 20px rgba(0, 0, 0, 0.85),
     inset 3px 3px 8px rgba(0, 0, 0, 0.6),
     inset -3px -3px 6px rgba(255, 255, 255, 0.05);
   text-align: center;
@@ -70,14 +74,14 @@ header {
 .gameRules:hover {
   transform: translate(-50%, -50%) scale(1.03);
   box-shadow:
-    0 18px 28px rgba(0, 0, 0, 0.9),
+    0 14px 22px rgba(0, 0, 0, 0.9),
     inset 4px 4px 10px rgba(0, 0, 0, 0.7),
     inset -4px -4px 8px rgba(255, 255, 255, 0.06);
 }
 
 .rules {
-  font-size: 19px;
-  line-height: 1.8;
+  font-size: 17px; /* чуть меньше */
+  line-height: 1.7;
   color: #e0e8e4;
   text-shadow:
     1px 1px 2px rgba(0, 0, 0, 0.8),
@@ -85,54 +89,43 @@ header {
 }
 
 .logoGallows {
-  margin-top: 5px;
-  margin-left: 340px;
+  margin-top: 4px;
+  margin-left: 320px; /* чуть левее */
   z-index: 10;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   background: radial-gradient(circle at center, #1f1f1f, #000000);
   box-shadow:
-    0 0 10px rgba(175, 22, 22, 0.3),
-    0 0 20px rgba(224, 13, 13, 0.3),
-    inset 0 0 10px rgba(255, 255, 255, 0.05);
+    0 0 8px rgba(175, 22, 22, 0.3),
+    0 0 18px rgba(224, 13, 13, 0.3),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
   border: 2px solid #3a3a3a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(108, 16, 16, 0.4));
+  filter: drop-shadow(0 0 6px rgba(108, 16, 16, 0.4));
   cursor: pointer;
-
   animation: swing 2.5s ease-in-out infinite;
 }
 
 @keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .logoGallows:hover {
-  transform: scale(1.1) rotate(3deg);
+  transform: scale(1.05) rotate(3deg);
   box-shadow:
-    0 0 15px rgba(255, 100, 100, 0.4),
-    0 0 25px rgba(255, 0, 0, 0.5);
-  filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+    0 0 12px rgba(255, 100, 100, 0.4),
+    0 0 22px rgba(255, 0, 0, 0.5);
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.6));
 }
 
 .blockGallows {
   position: absolute;
-  left: 80px;
-  top: 15px;
+  left: 70px;
+  top: 12px;
 }
 
 .logo {
@@ -140,14 +133,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 30px;
-  margin-right: 590px;
+  margin-left: 20px;
+  margin-right: 570px;
 }
 
 .tittle {
   position: relative;
   text-align: center;
-  font-size: 100px;
+  font-size: 85px; /* уменьшен */
   z-index: 10;
   background: transparent;
   color: rgb(80, 62, 62);
@@ -162,24 +155,15 @@ header {
   animation: jump 1s infinite ease-in-out;
 }
 
-@keyframes jump {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 .blockQuestion {
   position: relative;
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: center;
   z-index: 10;
 }
 
 .question {
-  font-size: 40px;
+  font-size: 34px; /* уменьшен */
   color: rgb(80, 62, 62);
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.6),
@@ -189,56 +173,86 @@ header {
 
 .blockWords {
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 40px;
+  margin-top: 12px;
+  margin-bottom: 30px;
 }
 
 .words {
-  font-size: 60px;
+  font-size: 50px; /* уменьшен */
   color: #fff;
   margin: 0 5px;
 }
 
 .hangman-img {
   display: block;
-  margin: 0 auto;
-  height: 400px;
+  margin: 20px auto 0 auto;
+  height: 350px; /* уменьшен */
   width: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  background-color: #fff;
+  border-radius: 15px;
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 0, 0, 0.4);
+  background-color: #111;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  animation: subtleGlow 3s infinite ease-in-out;
+}
+
+.hangman-img:hover {
+  transform: rotateY(12deg) rotateX(8deg) scale(1.03);
+  box-shadow:
+    0 18px 35px rgba(255, 0, 0, 0.85),
+    0 0 35px rgba(255, 80, 80, 0.7),
+    inset 0 0 25px rgba(255, 100, 100, 0.6);
 }
 
 .word {
   text-align: center;
-  font-size: 50px;
+  font-size: 48px; /* уменьшен */
   letter-spacing: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #fff;
+  text-shadow:
+    2px 2px 6px rgba(255, 0, 0, 0.7);
+}
+
+.letterSpan {
+  padding: 0 6px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  user-select: none;
 }
 
 .inputLetter {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .letter {
-  height: 70px;
-  width: 400px;
-  border-radius: 8px;
-  font-size: 30px;
+  height: 65px; /* уменьшен */
+  width: 380px; /* уменьшен */
+  border-radius: 10px;
+  font-size: 28px; /* уменьшен */
   cursor: pointer;
   background-color: rgb(33, 37, 37);
   color: rgb(202, 187, 187);
   text-transform: uppercase;
   text-align: center;
   border: none;
-
   box-shadow:
-    inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
-    0 4px 8px rgba(0, 0, 0, 0.7);
+    inset -2px -2px 7px rgba(255, 255, 255, 0.15),
+    inset 2px 2px 7px rgba(0, 0, 0, 0.7),
+    0 6px 15px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 0.3s ease;
+}
+
+.letter:focus {
+  outline: none;
+  box-shadow:
+    inset -3px -3px 9px rgba(255, 255, 255, 0.3),
+    inset 3px 3px 9px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(255, 0, 0, 0.8);
 }
 
 .end-screen {
@@ -247,7 +261,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.9);
+  background-color: rgba(15, 15, 15, 0.92);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -258,126 +272,104 @@ header {
 }
 
 .end-screen h2 {
-  font-size: 80px;
+  font-size: 72px; /* уменьшен */
   color: rgb(202, 187, 187);
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+  text-shadow: 2px 2px 12px rgba(255, 0, 0, 0.8);
+  margin-bottom: 18px;
   animation: textPop 1s ease forwards;
 }
 
 .end-screen p {
-  font-size: 40px;
+  font-size: 36px; /* уменьшен */
   color: rgb(180, 160, 160);
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
   animation: textPop 1.2s ease forwards;
-}
-
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes textPop {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  margin-bottom: 22px;
 }
 
 .restart-button {
-  margin-bottom: 10px;
+  padding: 12px 30px; /* уменьшен */
   cursor: pointer;
-  font-size: 20px;
-  padding: 12px 30px;
+  font-size: 20px; /* уменьшен */
   border-radius: 12px;
   border: 3px solid rgb(33, 37, 37);
   background-color: rgb(33, 37, 37);
   color: rgb(202, 187, 187);
-
   box-shadow:
-    inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
-    0 5px 15px rgba(0, 0, 0, 0.6);
-
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    inset -3px -3px 6px rgba(255, 255, 255, 0.2),
+    inset 3px 3px 8px rgba(0, 0, 0, 0.7),
+    0 7px 20px rgba(0, 0, 0, 0.75);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   transition:
-    transform 0.2s ease,
+    transform 0.3s ease,
     background-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 .restart-button:hover {
   background-color: rgb(50, 55, 55);
-  transform: scale(1.08);
+  transform: scale(1.1);
   box-shadow:
-    inset -1px -1px 4px rgba(255, 255, 255, 0.15),
-    inset 1px 1px 3px rgba(0, 0, 0, 0.4),
-    0 8px 20px rgba(0, 0, 0, 0.8);
+    inset -2px -2px 5px rgba(255, 255, 255, 0.3),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.6),
+    0 10px 28px rgba(0, 0, 0, 0.85);
 }
-  .sidebar {
-  position: absolute;
+
+.sidebar {
+  position: fixed;
   left: 20px;
-  top: 160px;
+  top: 50%;
+  transform: translateY(-50%);
   background: linear-gradient(145deg, #1a1f1c, #2c3430);
-  padding: 20px;
+  padding: 24px 20px; /* чуть уменьшен padding */
   border-radius: 20px;
   border: 2px solid #3e4a44;
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.85),
-    inset 3px 3px 8px rgba(0, 0, 0, 0.6),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.05);
-  z-index: 999;
-  width: 180px;
+    0 14px 30px rgba(0, 0, 0, 0.85),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.7),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.07);
+  z-index: 10000;
+  width: 200px; /* чуть уже */
   color: #d3ded8;
 }
 
 .sidebar h3 {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 20px;
+  margin-bottom: 18px;
+  font-size: 20px; /* чуть меньше */
+  font-weight: 600;
   color: #e0e8e4;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.7);
 }
 
 .category-button {
   display: block;
   width: 100%;
-  margin-bottom: 12px;
-  padding: 12px 16px;
+  margin-bottom: 14px; /* уменьшено */
+  padding: 14px 18px; /* уменьшен padding */
   background-color: rgb(33, 37, 37);
-  border: 2px solid rgb(33, 37, 37);
+  border: 2.5px solid rgb(33, 37, 37);
   border-radius: 12px;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 17px; /* уменьшен */
+  font-weight: 600;
   color: rgb(202, 187, 187);
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
-
   box-shadow:
-    inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
-    0 5px 12px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+    inset -3px -3px 6px rgba(255, 255, 255, 0.15),
+    inset 3px 3px 6px rgba(0, 0, 0, 0.7),
+    0 7px 16px rgba(0, 0, 0, 0.6);
+  transition: all 0.35s ease;
 }
 
 .category-button:hover {
   background-color: rgb(50, 55, 55);
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow:
-    inset -1px -1px 4px rgba(255, 255, 255, 0.1),
-    inset 1px 1px 4px rgba(0, 0, 0, 0.4),
-    0 8px 16px rgba(0, 0, 0, 0.7);
+    inset -2px -2px 7px rgba(255, 255, 255, 0.15),
+    inset 2px 2px 7px rgba(0, 0, 0, 0.6),
+    0 10px 22px rgba(0, 0, 0, 0.75);
 }
 
 .category-button.active {
@@ -385,7 +377,8 @@ header {
   border-color: #ff0000;
   color: #fff;
   box-shadow:
-    0 0 10px rgba(255, 0, 0, 0.6),
-    inset 0 0 6px rgba(255, 255, 255, 0.05);
-  transform: scale(1.07);
+    0 0 14px rgba(255, 0, 0, 0.75),
+    inset 0 0 9px rgba(255, 255, 255, 0.07);
+  transform: scale(1.12);
+  font-weight: 700;
 }

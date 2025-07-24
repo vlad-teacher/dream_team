@@ -17,7 +17,11 @@ const categories = {
   ],
   animals: ["Dog", "Cat", "Elephant", "Tiger", "Lion", "Fox", "Horse"],
   fruits: ["Apple", "Banana", "Mango", "Orange", "Grape", "Peach"],
-  countries: ["Poland", "Germany", "Japan", "Brazil", "Canada", "Spain"]
+  countries: ["Poland", "Germany", "Japan", "Brazil", "Canada", "Spain"],
+  sports: ["Football", "Basketball", "Tennis", "Hockey", "Golf", "Boxing"],
+  colors: ["Red", "Green", "Blue", "Yellow", "Black", "White", "Orange"],
+  movies: ["Titanic", "Inception", "Avatar", "Gladiator", "Joker", "Interstellar"],
+  instruments: ["Guitar", "Piano", "Violin", "Drums", "Flute", "Saxophone"]
 };
 
 const App = () => {
