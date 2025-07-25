@@ -25,14 +25,22 @@ const categories = {
 };
 
 const App = () => {
+  //  выбранная категория слов
   const [selectedCategory, setSelectedCategory] = useState("cars");
+  // текущее слово для угадывания
   const [word, setWord] = useState("");
+  // массив угаданных букв
   const [guessedLetters, setGuessedLetters] = useState([]);
+// текущее значение поля ввода
   const [input, setInput] = useState("");
+  // количество неправильных попыток
   const [mistakes, setMistakes] = useState(0);
+//  окончания игры
   const [gameOver, setGameOver] = useState(false);
+  //  выигрышь
   const [win, setWin] = useState(false);
   const [musicStarted, setMusicStarted] = useState(false);
+  
   const [musicPlaying, setMusicPlaying] = useState(true);
 
   const correctAudio = useRef(null);
@@ -59,7 +67,7 @@ const App = () => {
             setMusicPlaying(true);
           })
           .catch((err) => {
-            console.log("Не удалось запустить музыку:", err);
+            console.log("Музыка не запустилась:", err);
           });
       }
     };

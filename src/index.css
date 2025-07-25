@@ -1,9 +1,11 @@
+/* Сброс отступов , шрифт */
 * {
   box-sizing: border-box;
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Фон страницы, картинка на весь экран */
 body {
   background-image: url("/img/—Pngtree—black dark greenish blue dramatic_15437455 (1).jpg");
   background-size: cover;
@@ -12,6 +14,7 @@ body {
   overflow-x: hidden;
 }
 
+/*  центрирую содержимое по горизонтали и вертикальными отступами */
 header {
   position: relative;
   display: flex;
@@ -19,12 +22,13 @@ header {
   padding: 15px 0;
 }
 
+/* Кнопка включения/выключения звука — круглая, с цветом и тенями */
 .sound-toggle {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 38px;  /* уменьшено */
-  height: 38px; /* уменьшено */
+  width: 38px;  
+  height: 38px; 
   background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
   border: none;
   border-radius: 50%;
@@ -33,12 +37,13 @@ header {
     inset 2px 2px 5px rgba(0, 0, 0, 0.8),
     2px 2px 5px rgba(0, 0, 0, 0.6);
   color: #f1f1f1;
-  font-size: 18px; /* уменьшено */
+  font-size: 18px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index: 1000;
+  z-index: 1000; 
 }
 
+/* При наведении кнопка  увеличивается, изменяет тень */
 .sound-toggle:hover {
   transform: scale(1.1);
   box-shadow:
@@ -47,16 +52,17 @@ header {
     0 0 15px rgba(255, 0, 0, 0.7);
 }
 
+/*  Правила игры —  расположение,  фон и тени, увеличение при наведении */
 .gameRules {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 270px; /* чуть поднял */
-  left: 1150px; /* немного сместил левее */
+  top: 270px; 
+  left: 1150px; 
   transform: translate(-50%, -50%);
-  width: 420px; /* уменьшена ширина */
-  padding: 22px; /* уменьшен padding */
+  width: 420px; 
+  padding: 22px; 
   background: linear-gradient(145deg, #1a1f1c, #2c3430);
   border-radius: 18px;
   border: 2px solid #3e4a44;
@@ -71,16 +77,18 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/*  Блок правил — легкое масштабирование и усиление теней */
 .gameRules:hover {
-  transform: translate(-50%, -50%) scale(1.03);
+  transform: translate(-50%, -50%) scale(1.08);
   box-shadow:
     0 14px 22px rgba(0, 0, 0, 0.9),
     inset 4px 4px 10px rgba(0, 0, 0, 0.7),
     inset -4px -4px 8px rgba(255, 255, 255, 0.06);
 }
 
+/* Текст правил — размер, цвет , тени  */
 .rules {
-  font-size: 17px; /* чуть меньше */
+  font-size: 17px;
   line-height: 1.7;
   color: #e0e8e4;
   text-shadow:
@@ -88,9 +96,10 @@ header {
     0 0 10px rgba(140, 180, 160, 0.2);
 }
 
+/* Логотип игры — круглый. */
 .logoGallows {
   margin-top: 4px;
-  margin-left: 320px; /* чуть левее */
+  margin-left: 320px; 
   z-index: 10;
   border-radius: 50%;
   padding: 8px;
@@ -106,6 +115,7 @@ header {
   animation: swing 2.5s ease-in-out infinite;
 }
 
+/* Анимация  логотипа */
 @keyframes swing {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(-5deg); }
@@ -114,6 +124,7 @@ header {
   100% { transform: rotate(0deg); }
 }
 
+/*  Логотип — увеличение, вращение ,  свечение */
 .logoGallows:hover {
   transform: scale(1.05) rotate(3deg);
   box-shadow:
@@ -122,12 +133,14 @@ header {
   filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.6));
 }
 
+/* Обертка для логотипа — фиксированное расположение слева вверху */
 .blockGallows {
   position: absolute;
   left: 70px;
   top: 12px;
 }
 
+/* Контейнер для логотипа — флекс, для выравнивания */
 .logo {
   position: relative;
   display: flex;
@@ -137,10 +150,11 @@ header {
   margin-right: 570px;
 }
 
+/* Основной заголовок игры — большой шрифт с тенями для свечения */
 .tittle {
   position: relative;
   text-align: center;
-  font-size: 85px; /* уменьшен */
+  font-size: 85px; 
   z-index: 10;
   background: transparent;
   color: rgb(80, 62, 62);
@@ -150,11 +164,13 @@ header {
     0 0 20px rgba(255, 0, 0, 0.2);
 }
 
+/* Анимация прыжка части заголовка */
 .tittle .jump {
   display: inline-block;
   animation: jump 1s infinite ease-in-out;
 }
 
+/* Блок с вопросом — центрирование и отступ сверху */
 .blockQuestion {
   position: relative;
   margin-top: 15px;
@@ -162,8 +178,9 @@ header {
   z-index: 10;
 }
 
+/* Текст вопроса — средний размер шрифта с тенями */
 .question {
-  font-size: 34px; /* уменьшен */
+  font-size: 34px;
   color: rgb(80, 62, 62);
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.6),
@@ -171,22 +188,25 @@ header {
     0 0 20px rgba(255, 0, 0, 0.2);
 }
 
+/* Блок, где выводится слово — с отступами и центрированием */
 .blockWords {
   text-align: center;
   margin-top: 12px;
   margin-bottom: 30px;
 }
 
+/* Отдельные буквы слова — крупный белый шрифт */
 .words {
-  font-size: 50px; /* уменьшен */
+  font-size: 50px;
   color: #fff;
   margin: 0 5px;
 }
 
+/* Изображение виселицы — с тенями, анимацией свечения и 3D эффектами */
 .hangman-img {
   display: block;
   margin: 20px auto 0 auto;
-  height: 350px; /* уменьшен */
+  height: 350px;
   width: auto;
   border-radius: 15px;
   box-shadow:
@@ -199,6 +219,7 @@ header {
   animation: subtleGlow 3s infinite ease-in-out;
 }
 
+/* Hover эффект на виселице — поворот и усиление свечения */
 .hangman-img:hover {
   transform: rotateY(12deg) rotateX(8deg) scale(1.03);
   box-shadow:
@@ -207,33 +228,36 @@ header {
     inset 0 0 25px rgba(255, 100, 100, 0.6);
 }
 
+/* Контейнер для слова с пробелами между буквами */
 .word {
   text-align: center;
-  font-size: 48px; /* уменьшен */
+  font-size: 48px;
   letter-spacing: 10px;
   margin-bottom: 12px;
   color: #fff;
-  text-shadow:
-    2px 2px 6px rgba(255, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.7);
 }
 
+/* Отдельные буквы — паддинги и тени, запрет выделения текста */
 .letterSpan {
   padding: 0 6px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
   user-select: none;
 }
 
+/* Контейнер для поля ввода буквы — центрирование */
 .inputLetter {
   display: flex;
   justify-content: center;
   margin-top: 25px;
 }
 
+/* Поле ввода буквы — размеры, скругления, цвета, крупный шрифт, uppercase */
 .letter {
-  height: 65px; /* уменьшен */
-  width: 380px; /* уменьшен */
+  height: 65px;
+  width: 380px;
   border-radius: 10px;
-  font-size: 28px; /* уменьшен */
+  font-size: 28px;
   cursor: pointer;
   background-color: rgb(33, 37, 37);
   color: rgb(202, 187, 187);
@@ -247,6 +271,7 @@ header {
   transition: box-shadow 0.3s ease;
 }
 
+/* Подсветка при фокусе на поле ввода */
 .letter:focus {
   outline: none;
   box-shadow:
@@ -255,6 +280,7 @@ header {
     0 0 20px rgba(255, 0, 0, 0.8);
 }
 
+/* Экран окончания игры — полноэкранный затемнённый слой с центрированным текстом */
 .end-screen {
   position: fixed;
   top: 0;
@@ -271,26 +297,29 @@ header {
   text-align: center;
 }
 
+/* Заголовок на экране окончания — большой размер, цвет, свечения */
 .end-screen h2 {
-  font-size: 72px; /* уменьшен */
+  font-size: 72px;
   color: rgb(202, 187, 187);
   text-shadow: 2px 2px 12px rgba(255, 0, 0, 0.8);
   margin-bottom: 18px;
   animation: textPop 1s ease forwards;
 }
 
+/* Подзаголовок на экране окончания — средний размер, цвет и тени */
 .end-screen p {
-  font-size: 36px; /* уменьшен */
+  font-size: 36px;
   color: rgb(180, 160, 160);
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
   animation: textPop 1.2s ease forwards;
   margin-bottom: 22px;
 }
 
+/* Кнопка рестарта игры — стилизованная с тенью и анимацией наведения */
 .restart-button {
-  padding: 12px 30px; /* уменьшен */
+  padding: 12px 30px;
   cursor: pointer;
-  font-size: 20px; /* уменьшен */
+  font-size: 20px;
   border-radius: 12px;
   border: 3px solid rgb(33, 37, 37);
   background-color: rgb(33, 37, 37);
@@ -306,6 +335,7 @@ header {
     box-shadow 0.3s ease;
 }
 
+/* кнопкa рестарт — увеличение и изменение цвета */
 .restart-button:hover {
   background-color: rgb(50, 55, 55);
   transform: scale(1.1);
@@ -315,13 +345,14 @@ header {
     0 10px 28px rgba(0, 0, 0, 0.85);
 }
 
+/* Kатегории — слева и  посередине экрана */
 .sidebar {
   position: fixed;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
   background: linear-gradient(145deg, #1a1f1c, #2c3430);
-  padding: 24px 20px; /* чуть уменьшен padding */
+  padding: 24px 20px;
   border-radius: 20px;
   border: 2px solid #3e4a44;
   box-shadow:
@@ -329,28 +360,30 @@ header {
     inset 4px 4px 10px rgba(0, 0, 0, 0.7),
     inset -4px -4px 8px rgba(255, 255, 255, 0.07);
   z-index: 10000;
-  width: 200px; /* чуть уже */
+  width: 200px;
   color: #d3ded8;
 }
 
+/* Заголовок  панели  кнопок */
 .sidebar h3 {
   text-align: center;
   margin-bottom: 18px;
-  font-size: 20px; /* чуть меньше */
+  font-size: 20px;
   font-weight: 600;
   color: #e0e8e4;
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.7);
 }
 
+/* Кнопки выбора категории */
 .category-button {
   display: block;
   width: 100%;
-  margin-bottom: 14px; /* уменьшено */
-  padding: 14px 18px; /* уменьшен padding */
+  margin-bottom: 14px;
+  padding: 14px 18px;
   background-color: rgb(33, 37, 37);
   border: 2.5px solid rgb(33, 37, 37);
   border-radius: 12px;
-  font-size: 17px; /* уменьшен */
+  font-size: 17px;
   font-weight: 600;
   color: rgb(202, 187, 187);
   cursor: pointer;
@@ -363,22 +396,71 @@ header {
   transition: all 0.35s ease;
 }
 
+/*  эффект кнопок — смена цвета, масштаб и тени */
 .category-button:hover {
   background-color: rgb(50, 55, 55);
   transform: scale(1.08);
   box-shadow:
-    inset -2px -2px 7px rgba(255, 255, 255, 0.15),
-    inset 2px 2px 7px rgba(0, 0, 0, 0.6),
-    0 10px 22px rgba(0, 0, 0, 0.75);
+    inset -2px -2px 5px rgba(255, 255, 255, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.6),
+    0 12px 22px rgba(0, 0, 0, 0.85);
 }
 
+/* Активная категория — красный фон  */
 .category-button.active {
-  background-color: #ff4444;
-  border-color: #ff0000;
+  background-color: #eb3c3c;
+  border-color: #e73737;
   color: #fff;
   box-shadow:
-    0 0 14px rgba(255, 0, 0, 0.75),
-    inset 0 0 9px rgba(255, 255, 255, 0.07);
-  transform: scale(1.12);
+    0 0 12px #f52d2d,
+    inset 0 0 10px #f52d2d;
   font-weight: 700;
+  transform: scale(1.1);
 }
+
+/* Анимация появления экрана окончания */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анимация появления текста на экране окончания */
+@keyframes textPop {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  мерцание для виселицы */
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow:
+      0 12px 20px rgba(0, 0, 0, 0.6),
+      0 0 25px rgba(255, 0, 0, 0.5),
+      inset 0 0 15px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.7),
+      0 0 40px rgba(255, 50, 50, 0.7),
+      inset 0 0 25px rgba(255, 50, 50, 0.6);
+  }
+}
+
+/* Анимация прыжка для элементов с классом jump */
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
