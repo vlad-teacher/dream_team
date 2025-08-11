@@ -1,12 +1,28 @@
-import cn from './index.module.css';
+import { useState } from "react";
+import classnames from "./index.module.css";
 
+// render
 
+export function UserInput() {
+   const [textFromInput, setTextFromInput] = useState('default!'); // ['default!', () => {}]
 
+  const clickHanlder = (e) => {
+    console.log(e);
+  };
 
-export function UserInput () {
+  const changeHandler = (e) => {
 
-    return <div className={cn.wrapper}>
-        <input type="text"/>
-        <button>OK</button>
+    setTextFromInput(e.target.value);
+
+  };
+
+  console.log('outside', textFromInput);
+
+  return (
+    <div className={classnames.wrapper}>
+      <div>{textFromInput}</div>
+      <input type="text" onChange={changeHandler} />
+      <button onClick={clickHanlder}>OK</button>
     </div>
+  );
 }
