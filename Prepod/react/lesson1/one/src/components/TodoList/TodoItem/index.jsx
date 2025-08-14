@@ -1,10 +1,12 @@
 
 
 
-export function TodoItem() {
+export function TodoItem(props) {
+
+
   return (
     <li>
-      <span>some text</span> <button>edit</button> <button>delete</button>
+      <span>{ props.text }</span> <button>edit</button> <button>delete</button>
     </li>
   );
 }
