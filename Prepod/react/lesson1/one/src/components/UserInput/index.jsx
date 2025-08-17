@@ -1,22 +1,18 @@
 import { useState } from "react";
 import classnames from "./index.module.css";
 
-// render
-
-export function UserInput() {
-   const [textFromInput, setTextFromInput] = useState('default!'); // ['default!', () => {}]
+export function UserInput(props) {
+   const [textFromInput, setTextFromInput] = useState('');
 
   const clickHanlder = (e) => {
     console.log(e);
   };
 
   const changeHandler = (e) => {
-
-    setTextFromInput(e.target.value);
-
+    setTextFromInput(e.target.value); // обрабатываем инпут
+    
+    props.onAddTodo(e.target.value);
   };
-
-  console.log('outside', textFromInput);
 
   return (
     <div className={classnames.wrapper}>
