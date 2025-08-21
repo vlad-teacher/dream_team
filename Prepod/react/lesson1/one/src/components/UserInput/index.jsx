@@ -1,24 +1,27 @@
 import { useState } from "react";
 import classnames from "./index.module.css";
 
-export function UserInput(props) {
+export function UserInput({onAddTodo}) {
    const [textFromInput, setTextFromInput] = useState('');
 
-  const clickHanlder = (e) => {
-    console.log(e);
+  const clickHanlder = () => {
+    onAddTodo(textFromInput);
+    setTextFromInput('');
   };
 
   const changeHandler = (e) => {
-    setTextFromInput(e.target.value); // обрабатываем инпут
-    
-    props.onAddTodo(e.target.value);
+    setTextFromInput(e.target.value);
+  };
+
+  const onClear = () => {
+    setTextFromInput('');
   };
 
   return (
     <div className={classnames.wrapper}>
-      <div>{textFromInput}</div>
-      <input type="text" onChange={changeHandler} />
+      <input type="text" onChange={changeHandler} value={textFromInput} />
       <button onClick={clickHanlder}>OK</button>
+      <button onClick={onClear}> clear input </button>
     </div>
   );
 }

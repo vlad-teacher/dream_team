@@ -1,27 +1,68 @@
-import React from 'react';
-import { UserInput } from './components/UserInput';
-import { TodoList } from './components/TodoList';
+import React, { useState } from "react";
+import { UserInput } from "./components/UserInput";
+import { TodoList } from "./components/TodoList";
 
+// react dev tools memo
 // <> if VDOM conditional render, RENDER, SPA, css-in-js
 const App = () => {
-  const todosArr = ['схождить в магазин', 'заправить авто','помыть пол', 'помыть посуду'];
+  const [todosArr, setTodosArr] = useState([
+    {
+      id: Math.random().toString(),
+      text: "схождить в магазин",
+      isEditing: false,
+    },
+    {
+      id: Math.random().toString(),
+      text: "заправить авто",
+      isEditing: false,
+    },
+    {
+      id: Math.random().toString(),
+      text: "помыть пол",
+      isEditing: false,
+    },
+    {
+      id: Math.random().toString(),
+      text: "помыть посуду",
+      isEditing: false,
+    },
+  ]);
 
-  // переписать на useState, где стейтом является весь массив
-  // подумать в какой момент мы должны сетать новый массив (спред + новый элемент)
+  const addTodo = (text) => {
+    setTodosArr((prevTodosArr) => [
+      ...prevTodosArr,
+      {
+        id: Math.random().toString(),
+        isEditing: false,
+        text,
+      },
+    ]);
+  };
 
-  const addTodo = (todoText) => {
-    todosArr.push(todoText);
+  const onDeleteTodo = (deleteId) => {
+    setTodosArr((prevTodosArr) =>
+      prevTodosArr.filter(({ id }) => deleteId !== id)
+    );
+  };
+
+  const switchEdit = (todoId) => {
+    setTodosArr((prevTodosArr) =>
+      prevTodosArr.map((item) =>
+        item.id === todoId ? { ...item, isEditing: !item.isEditing } : item
+      )
+    );
   };
 
   return (
-      <div className="App">
-         <UserInput onAddTodo={addTodo} />
-         <TodoList todos={todosArr} />
-      </div>
+    <div className="App">
+      <UserInput onAddTodo={addTodo} />
+      <TodoList
+        todos={todosArr}
+        deleteTodo={onDeleteTodo}
+        switchEdit={switchEdit}
+      />
+    </div>
   );
-}
+};
 
 export default App;
-
-
-

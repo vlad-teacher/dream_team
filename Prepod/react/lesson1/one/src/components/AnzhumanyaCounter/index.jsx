@@ -1,5 +1,4 @@
 import { useCounter } from "../../hooks/useCounter";
-// TODO: two way binding
 
 export const AnzhumanyaCounter = () => {
   const {decrement, increment, counter} = useCounter(10, 1);
