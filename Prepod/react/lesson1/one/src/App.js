@@ -53,6 +53,18 @@ const App = () => {
     );
   };
 
+  const onChangeTodoText = (textInput, idChange) => {
+    setTodosArr((prevTodosArr) => {
+      return prevTodosArr.map((item) => {
+        if (item.id === idChange) {
+          return { ...item, text: textInput };
+        } else {
+          return item;
+        }
+      });
+    });
+  };
+
   return (
     <div className="App">
       <UserInput onAddTodo={addTodo} />
@@ -60,6 +72,7 @@ const App = () => {
         todos={todosArr}
         deleteTodo={onDeleteTodo}
         switchEdit={switchEdit}
+        todoTextChanged={onChangeTodoText}
       />
     </div>
   );
