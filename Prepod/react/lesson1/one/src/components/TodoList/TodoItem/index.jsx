@@ -1,15 +1,16 @@
 // dummy component
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 
-export function TodoItem({
+export const TodoItem = memo(({
   text,
   onDeleteTodo,
   id,
   switchEdit,
   isEditing,
   changeTodoText,
-}) {
+}) => {
   const [textInput, setTextInput] = useState(text);
+
 
   const onClick = () => {
     onDeleteTodo(id);
@@ -30,6 +31,11 @@ export function TodoItem({
     console.log(`значение textInput ${textInput}`);
   };
 
+  const cancelHandler = () => {
+    setTextInput(text);
+    // switchEdit(id);
+  };
+
   return (
     <li>
       {isEditing ? (
@@ -39,6 +45,7 @@ export function TodoItem({
       )}
       <button onClick={onEditOn}> {isEditing ? "ok" : "edit"} </button>
       <button onClick={onClick}>delete</button>
+      { isEditing && <button onClick={cancelHandler}>cancel</button> }
     </li>
   );
-}
+} );
