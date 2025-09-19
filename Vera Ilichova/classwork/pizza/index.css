@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+/* div{
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    display:flex;
+    justify-content:space-around; 
+       
+}  */
+    #zakazFormation > ul { 
+              color:red;
+        font-size: 16px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: listitem;
+    } 
+ #zakazDescription{
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 650px;
+    padding: 10px;
+    margin: 5px;
+    background-color: yellow;
+    display: inline-flex;
+    justify-content:space-around; 
+       
+} 
+#zakaz {
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 650px;
+    padding: 5px;
+    margin: 5px;
+    background-color: yellow;
+    display: flex;
+    justify-content:space-around; 
+       
+} 
+   #zakaz > ul .base + ul .ingredient1 + ul .ingredient2 + ul .sous{
+    color: #3700ff;
+    font-size: 16px;
+    list-style: none;
+    } 
+
+ li {
+    color: #3700ff;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: min-content;
+}
+
+
+h2{
+    text-align:center;
+     color: rgb(240, 18, 125);
+    
+}
+p{
+    text-align: left ;
+     color: red;}
+     #span{
+        font-size: 20px;
+        text-align:left;
+     
+}
+ #imgPizza{
+    width: 300px;
+    margin: auto;
+    display:flex;
+}
+#imgPizza > img{ 
+    width: 100%;
+    }
+#btn{ color: blue;
+
+border-radius: 10px;
+cursor: pointer;
+padding: 10px;
+margin: 20 px;}
+#btn:hover{
+    background-color: blue;
+    color:rgb(248, 216, 234);
+    animation-play-state: paused;
+    }
+ 
